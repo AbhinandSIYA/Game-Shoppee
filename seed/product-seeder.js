@@ -1,13 +1,13 @@
-let dbconfig=require("../dbconfig/db-connect");
+let dbConfig=require('../dbconfig/db-connect');
 
-dbconfig.connect(function (error) {
+dbConfig.connect(function (error) {
     if (error){
         console.log('DB connection error')
         process.exit(1);
     } else{
-        console.log('connected successfully');
+        console.log('connected successfully and inserting data to db');
 
-        dbconfig.get().collection('product').insertMany([
+        dbConfig.get().collection('product').insertMany([
             {
                 imagePath:'https://upload.wikimedia.org/wikipedia/en/thumb/5/5e/Gothiccover.png/220px-Gothiccover.png',
                 title:'Gothic Video Game',
